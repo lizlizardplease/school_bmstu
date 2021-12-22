@@ -15,9 +15,16 @@ student::student(QWidget *parent, QString login) :
     ui->papa->setText(query.value(2).toString());
     ui->mail->setText(query.value(3).toString());
     ui->ph->setText(query.value(4).toString());
+    dialog = new adds;
 }
 
 student::~student()
 {
     delete ui;
 }
+
+void student::on_pushButton_clicked()
+{
+    dialog->exec();
+}
+

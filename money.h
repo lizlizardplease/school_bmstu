@@ -18,7 +18,6 @@ public:
 
 private:
     Ui::money *ui;
-    QWidget *dad;
 };
 
 #endif // MONEY_H

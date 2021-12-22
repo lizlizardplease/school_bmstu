@@ -9,6 +9,7 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    adds.cpp \
     administrator.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -17,6 +18,7 @@ SOURCES += \
     tutor.cpp
 
 HEADERS += \
+    adds.h \
     administrator.h \
     mainwindow.h \
     money.h \
@@ -24,6 +26,7 @@ HEADERS += \
     tutor.h
 
 FORMS += \
+    adds.ui \
     administrator.ui \
     mainwindow.ui \
     money.ui \
