@@ -12,3 +12,5 @@ money::~money()
 {
     delete ui;
 }
+
+

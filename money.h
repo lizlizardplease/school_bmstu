@@ -15,8 +15,10 @@ public:
     explicit money(QWidget *parent = nullptr);
     ~money();
 
+
 private:
     Ui::money *ui;
+    QWidget *dad;
 };
 
 #endif // MONEY_H
