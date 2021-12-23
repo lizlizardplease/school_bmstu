@@ -45,7 +45,7 @@ void MainWindow::on_pushButton_clicked()
         }
         else{
             if (type == "teacher"){
-                tutor *me = new tutor;
+                tutor *me = new tutor(this, Username);
                 me->show();
             }
             else {

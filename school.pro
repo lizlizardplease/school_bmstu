@@ -11,6 +11,7 @@ CONFIG += c++11
 SOURCES += \
     adds.cpp \
     administrator.cpp \
+    change.cpp \
     main.cpp \
     mainwindow.cpp \
     money.cpp \
@@ -20,6 +21,7 @@ SOURCES += \
 HEADERS += \
     adds.h \
     administrator.h \
+    change.h \
     mainwindow.h \
     money.h \
     student.h \
@@ -28,6 +30,7 @@ HEADERS += \
 FORMS += \
     adds.ui \
     administrator.ui \
+    change.ui \
     mainwindow.ui \
     money.ui \
     student.ui \
