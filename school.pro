@@ -12,6 +12,7 @@ SOURCES += \
     adds.cpp \
     administrator.cpp \
     change.cpp \
+    course.cpp \
     main.cpp \
     mainwindow.cpp \
     money.cpp \
@@ -22,6 +23,7 @@ HEADERS += \
     adds.h \
     administrator.h \
     change.h \
+    course.h \
     mainwindow.h \
     money.h \
     student.h \
@@ -31,6 +33,7 @@ FORMS += \
     adds.ui \
     administrator.ui \
     change.ui \
+    course.ui \
     mainwindow.ui \
     money.ui \
     student.ui \

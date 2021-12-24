@@ -9,7 +9,9 @@ administrator::administrator(QWidget *parent) :
     m_model=new QSqlQueryModel;
     ui->tableView->setModel(m_model);
     ui->tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui->tableView->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
     dialog = new money;
+    dialog1 = new course;
 }
 
 administrator::~administrator()
@@ -38,5 +40,13 @@ void administrator::on_students_clicked()
 void administrator::on_cash_clicked()
 {
    dialog->exec();
+}
+
+
+void administrator::on_pushButton_clicked()
+{
+    if (dialog1->exec() == QDialog::Accepted){
+        m_model->setQuery("SELECT * FROM liza_and_egor.courses;");
+    }
 }
 
