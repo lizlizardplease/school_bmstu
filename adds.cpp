@@ -28,7 +28,8 @@ void adds::on_tableView_pressed(const QModelIndex &index)
 {
     if(index.column() == 0){
         ui->pushButton->setEnabled(1);
-        ui->pushButton->setText("Купить курс\n" + index.data(0).toString());
+        chosen = index.data(0).toString();
+        ui->pushButton->setText("Купить курс\n" + chosen);
     }
     else
     {
@@ -41,6 +42,13 @@ void adds::on_tableView_pressed(const QModelIndex &index)
 void adds::on_pushButton_clicked()
 {
     QSqlQuery query;
-    query.prepare("UPDATE TABLE liza_and_egor.users SET "+login+"'");
+    query.prepare("INSERT INTO liza_and_egor.courses_users VALUES ('"+chosen+"', '" + login + "');");
+    if (ui->pushButton->isEnabled())
+    {
+        query.exec();
+        qDebug() << login << "  " << chosen;
+        qDebug() << m_model->lastError();
+        accept();
+    }
 }
 

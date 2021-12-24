@@ -22,10 +22,12 @@ private slots:
 
     void on_pushButton_clicked();
 
+
 private:
     Ui::adds *ui;
     QSqlQueryModel *m_model;
     QString login;
+    QString chosen;
 };
 
 #endif // ADDS_H

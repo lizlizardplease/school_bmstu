@@ -129,7 +129,7 @@
      <x>20</x>
      <y>70</y>
      <width>631</width>
-     <height>411</height>
+     <height>391</height>
     </rect>
    </property>
    <property name="frameShape">
@@ -250,6 +250,19 @@
    </property>
    <property name="text">
     <string>пополнить</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="out">
+   <property name="geometry">
+    <rect>
+     <x>36</x>
+     <y>480</y>
+     <width>591</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
    </property>
   </widget>
  </widget>
