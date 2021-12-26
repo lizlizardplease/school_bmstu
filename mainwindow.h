@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QDebug>
 #include <QFileInfo>
+#include <QMessageBox>
 #include "administrator.h"
 #include "tutor.h"
 #include "student.h"

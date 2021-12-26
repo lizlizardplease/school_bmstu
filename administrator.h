@@ -4,7 +4,7 @@
 #include <QMainWindow>
 #include <QtSql>
 #include "money.h"
-
+#include "course.h"
 namespace Ui {
 class administrator;
 }
@@ -26,10 +26,13 @@ private slots:
 
     void on_cash_clicked();
 
+    void on_pushButton_clicked();
+
 private:
     Ui::administrator *ui;
     QSqlQueryModel *m_model;
     money* dialog;
+    course* dialog1;
 };
 
 #endif // ADMINISTRATOR_H

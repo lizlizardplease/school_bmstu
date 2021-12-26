@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QtSql>
 #include "adds.h"
+#include "change.h"
 
 namespace Ui {
 class student;
@@ -20,9 +21,17 @@ public:
 private slots:
     void on_pushButton_clicked();
 
+    void on_pushButton_3_clicked();
+
+    void on_pushButton_2_clicked();
+
 private:
+    void update();
     Ui::student *ui;
     adds* dialog;
+    QString login;
+    QSqlQueryModel *m_model;
+    change* dialog_ch;
 };
 
 #endif // STUDENT_H

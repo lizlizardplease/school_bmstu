@@ -15,7 +15,8 @@ MainWindow::MainWindow(QWidget *parent)
     m_db.setUserName(settings.value("L0gin", "student").toString());
     m_db.setPassword(settings.value("Password", "bmstu").toString());
     settings.endGroup();
-    if(!m_db.open()){
+    if(!m_db.open())
+    {
         ui->label->setText("Вход Закрыт!");
         ui->centralwidget->setStyleSheet("background-color: #E35984");
     }
@@ -39,25 +40,34 @@ void MainWindow::on_pushButton_clicked()
     {
         this->hide();
         QString type = query.value(0).toString();
-        if (type == "admin"){
+        if (type == "admin")
+        {
             administrator *me = new administrator;
             me->show();
         }
-        else{
-            if (type == "teacher"){
-                tutor *me = new tutor;
+        else
+        {
+            if (type == "teacher")
+            {
+                tutor *me = new tutor(this, Username);
                 me->show();
             }
-            else {
-                if (type == "student"){
+            else
+            {
+                if (type == "student")
+                {
                     student *me = new student(this, Username);
                     me->show();
                 }
-                else{
-                    ui->error->setText("Неправильный логин или пароль");
+                else
+                {
+                    //ui->error->setText("Неправильный логин или пароль");
+                    QMessageBox::critical(this, tr("Ошибка!"), tr("Неправильный логин или пароль!"));
                 }
             }
         }
      }
+    else
+        QMessageBox::critical(this, tr("Ошибка!"), tr("Неправильный логин или пароль!"));
 }
 
