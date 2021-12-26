@@ -24,6 +24,7 @@ tutor::~tutor()
 {
     delete ui;
 }
+
 void tutor::update(){
     QSqlQuery query;
     query.prepare("SELECT * FROM liza_and_egor.users WHERE login='"+login+"'");

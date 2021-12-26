@@ -25,6 +25,8 @@ void course::on_pushButton_clicked()
     QString tmp, deal = "INSERT INTO liza_and_egor.courses VALUES('";
     tmp = ui->name->text();
     qDebug() << tmp;
+
+
     if (tmp == ""){
         ui->label_8->setText("вы не ввели название курса.....");
         return;
@@ -33,6 +35,8 @@ void course::on_pushButton_clicked()
         deal += tmp + "', '";
     tmp = ui->shed->text();
     qDebug() << tmp;
+
+
     if (tmp == ""){
         ui->label_8->setText("вы не ввели расписание курса.....");
         return;
@@ -41,6 +45,8 @@ void course::on_pushButton_clicked()
         deal += tmp + "', 0, '";
     tmp = ui->comboBox->currentText();
     qDebug() << tmp;
+
+
     if (tmp == ""){
         ui->label_8->setText("вы не выбрали учителя.....");
         return;
@@ -49,6 +55,8 @@ void course::on_pushButton_clicked()
         deal += tmp + "', ";
     tmp = ui->cost->text();
     qDebug() << tmp;
+
+
     if (tmp == ""){
         ui->label_8->setText("вы не ввели стоимость курса.....");
         return;

@@ -40,25 +40,34 @@ void MainWindow::on_pushButton_clicked()
     {
         this->hide();
         QString type = query.value(0).toString();
-        if (type == "admin"){
+        if (type == "admin")
+        {
             administrator *me = new administrator;
             me->show();
         }
-        else{
-            if (type == "teacher"){
+        else
+        {
+            if (type == "teacher")
+            {
                 tutor *me = new tutor(this, Username);
                 me->show();
             }
-            else {
-                if (type == "student"){
+            else
+            {
+                if (type == "student")
+                {
                     student *me = new student(this, Username);
                     me->show();
                 }
-                else{
-                    ui->error->setText("Неправильный логин или пароль");
+                else
+                {
+                    //ui->error->setText("Неправильный логин или пароль");
+                    QMessageBox::critical(this, tr("Ошибка!"), tr("Неправильный логин или пароль!"));
                 }
             }
         }
      }
+    else
+        QMessageBox::critical(this, tr("Ошибка!"), tr("Неправильный логин или пароль!"));
 }
 
