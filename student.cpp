@@ -12,7 +12,7 @@ student::student(QWidget *parent, QString l) :
     update();
     m_model = new QSqlQueryModel;
     ui->tableView->setModel(m_model);
-    m_model->setQuery(" SELECT title, discription, (surname || ' ' || name) AS ФИО_Преподавателя FROM liza_and_egor.users JOIN liza_and_egor.courses ON login = tutor JOIN liza_and_egor.courses_users ON title = course WHERE username = '"+ login + "';");
+    m_model->setQuery(" SELECT title, description, (surname || ' ' || name) AS ФИО_Преподавателя FROM liza_and_egor.users JOIN liza_and_egor.courses ON login = tutor JOIN liza_and_egor.courses_users ON title = course WHERE username = '"+ login + "';");
     dialog = new adds(this, login);
     dialog_ch = new change(this, login);
 }
@@ -44,7 +44,8 @@ void student::update(){
 }
 void student::on_pushButton_3_clicked()
 {
-    if (dialog_ch->exec() == QDialog::Accepted){
+    if (dialog_ch->exec() == QDialog::Accepted)
+{
         update();
     }
 }
@@ -52,6 +53,9 @@ void student::on_pushButton_3_clicked()
 
 void student::on_pushButton_2_clicked()
 {
-
+    if (dialog_ch->exec() == QDialog::Accepted)
+    {
+        update();
+    }
 }
 
