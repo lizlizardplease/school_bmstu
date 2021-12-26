@@ -1,34 +1,34 @@
-#include "mainwindow.h"
-#include "ui_mainwindow.h"
+#include "welcome.h"
+#include "ui_welcome.h"
 
-MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
+welcome::welcome(QSqlDatabase &db) :
+    QDialog(),
+    ui(new Ui::welcome)
 {
     ui->setupUi(this);
-    QSqlDatabase db = QSqlDatabase::addDatabase("QPSQL");
-    QSettings settings;
-    settings.beginGroup("/Database_browser/settings");
-    db.setDatabaseName(settings.value("Database_name", "fn1131_2021").toString());
-    db.setHostName(settings.value("Host_ip", "195.19.32.74").toString());
-    db.setPort(settings.value("P0rt", 5432).toInt());
-    db.setUserName(settings.value("L0gin", "student").toString());
-    db.setPassword(settings.value("Password", "bmstu").toString());
-    settings.endGroup();
-    if(!db.open()){
+    m_db = db;
+    if(!m_db.open()){
         ui->label->setText("Вход Закрыт!");
-        ui->centralwidget->setStyleSheet("background-color: #E35984");
+       // ui->centralwidget->setStyleSheet("background-color: #E35984");
     }
 }
-
-MainWindow::~MainWindow()
+welcome::welcome() :
+    QDialog(),
+    ui(new Ui::welcome)
 {
-    db.close();
+    ui->setupUi(this);
+    /*if(!m_db.open()){
+        ui->label->setText("Вход Закрыт!");
+       // ui->centralwidget->setStyleSheet("background-color: #E35984");
+    }*/
+}
+
+welcome::~welcome()
+{
     delete ui;
 }
 
-
-void MainWindow::on_pushButton_clicked()
+void welcome::on_pushButton_clicked()
 {
     QString Username, Password;
     Username = ui->login->text();

@@ -13,9 +13,11 @@ SOURCES += \
     administrator.cpp \
     change.cpp \
     course.cpp \
+    guest.cpp \
     main.cpp \
     mainwindow.cpp \
     money.cpp \
+    pay.cpp \
     student.cpp \
     tutor.cpp
 
@@ -24,8 +26,10 @@ HEADERS += \
     administrator.h \
     change.h \
     course.h \
+    guest.h \
     mainwindow.h \
     money.h \
+    pay.h \
     student.h \
     tutor.h
 
@@ -34,8 +38,10 @@ FORMS += \
     administrator.ui \
     change.ui \
     course.ui \
+    guest.ui \
     mainwindow.ui \
     money.ui \
+    pay.ui \
     student.ui \
     tutor.ui
 
