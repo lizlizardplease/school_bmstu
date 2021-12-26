@@ -6,6 +6,7 @@ course::course(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::course)
 {
+    this->setWindowTitle("Добавление курса");
     ui->setupUi(this);
     QSqlQuery query;
     query.prepare("SELECT login FROM liza_and_egor.users WHERE role = 'teacher'");

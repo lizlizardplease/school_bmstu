@@ -2,12 +2,13 @@
 #include "ui_tutor.h"
 
 
-tutor::tutor(QWidget *parent, QString l) :
+tutor::tutor(QString l, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::tutor)
 {
-    login = l;
+    this->login=l;
     dialog = new change(this, login);
+    dialog->setWindowTitle("Изменение данных");
     dialog1 = new pay(this, login);
     ui->setupUi(this);
     ui->tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
@@ -26,7 +27,8 @@ tutor::~tutor()
     delete ui;
 }
 
-void tutor::update(){
+void tutor::update()
+{
     QSqlQuery query;
     query.prepare("SELECT * FROM liza_and_egor.users WHERE login='"+login+"'");
     query.exec();
@@ -38,13 +40,29 @@ void tutor::update(){
     ui->ph->setText(query.value(8).toString());
     ui->textEdit->setText(query.value(7).toString());
 }
+
 void tutor::on_change_clicked()
 {
     if (dialog->exec() == QDialog::Accepted){
         update();
+        QMessageBox::information(this, tr("Изменение данных"), tr("Данные успешно сохранены."));
     }
 }
 
+/*
+<<<<<<< HEAD
+void tutor::on_pushButton_money_clicked()
+{
+    // sql запрос на изменение баланса в таблице на 0
+    QSqlQuery query;
+    query.prepare ("UPDATE liza_and_egor.users SET bank=0 WHERE login='"+login+"'");
+    if (query.exec())
+        QMessageBox::information(this, tr("Баланс"), tr("Баланс успешно списан."));
+}
+*/
+
+
+//=======
 
 void tutor::on_pay_clicked()
 {
@@ -57,3 +75,4 @@ void tutor::on_pay_clicked()
     }
 }
 
+//>>>>>>> ddb503610846b20bbbb66a4275fdc3fe807dffc3

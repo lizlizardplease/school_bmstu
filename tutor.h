@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QtSql>
+#include <QMessageBox>
 #include "change.h"
 #include "pay.h"
 
@@ -15,14 +16,18 @@ class tutor : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit tutor(QWidget *parent = nullptr, QString login = "");
+    explicit tutor(QString login = "", QWidget *parent = nullptr);
     ~tutor();
 
 private slots:
     void on_change_clicked();
     void update();
 
+//<<<<<<< HEAD
+//    void on_pushButton_money_clicked();
+//=======
     void on_pay_clicked();
+//>>>>>>> ddb503610846b20bbbb66a4275fdc3fe807dffc3
 
 private:
     Ui::tutor *ui;
