@@ -14,7 +14,9 @@ student::student(QWidget *parent, QString l) :
     ui->tableView->setModel(m_model);
     m_model->setQuery(" SELECT title, description, (surname || ' ' || name) AS ФИО_Преподавателя FROM liza_and_egor.users JOIN liza_and_egor.courses ON login = tutor JOIN liza_and_egor.courses_users ON title = course WHERE username = '"+ login + "';");
     dialog = new adds(this, login);
+    dialog->setWindowTitle("Каталог новых курсов");
     dialog_ch = new change(this, login);
+    dialog_ch->setWindowTitle("Изменение данных");
 }
 
 student::~student()
@@ -42,20 +44,13 @@ void student::update(){
     ui->ph->setText(query.value(8).toString());
     ui->cash->setText(query.value(7).toString());
 }
+
 void student::on_pushButton_3_clicked()
-{
-    if (dialog_ch->exec() == QDialog::Accepted)
-{
-        update();
-    }
-}
-
-
-void student::on_pushButton_2_clicked()
 {
     if (dialog_ch->exec() == QDialog::Accepted)
     {
         update();
     }
 }
+
 

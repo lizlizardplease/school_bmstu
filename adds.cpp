@@ -43,9 +43,12 @@ void adds::on_pushButton_clicked()
 {
     QSqlQuery query;
     query.prepare("INSERT INTO liza_and_egor.courses_users VALUES ('"+chosen+"', '" + login + "');");
+    QSqlQuery query1;
+    query1.prepare("UPDATE liza_and_egor.courses SET amount=amount+1 WHERE title='"+chosen+"'");
     if (ui->pushButton->isEnabled())
     {
         query.exec();
+        query1.exec();
         qDebug() << login << "  " << chosen;
         qDebug() << m_model->lastError();
         accept();

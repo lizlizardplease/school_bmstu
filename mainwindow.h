@@ -18,8 +18,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-   explicit MainWindow(QWidget *parent = nullptr);
-    MainWindow(char x);
+    MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
 private slots:
@@ -27,6 +26,6 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    QSqlDatabase db;
+    QSqlDatabase m_db;
 };
 #endif // MAINWINDOW_H

@@ -334,7 +334,7 @@
        </layout>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton">
+       <widget class="QPushButton" name="pushButton_money">
         <property name="text">
          <string>вывести деньги</string>
         </property>
