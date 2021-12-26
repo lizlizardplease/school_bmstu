@@ -15,6 +15,7 @@ student::student(QWidget *parent, QString l) :
     m_model->setQuery(" SELECT title, description, (surname || ' ' || name) AS ФИО_Преподавателя FROM liza_and_egor.users JOIN liza_and_egor.courses ON login = tutor JOIN liza_and_egor.courses_users ON title = course WHERE username = '"+ login + "';");
     dialog = new adds(this, login);
     dialog_ch = new change(this, login);
+    dialog_pay = new pay(this, login);
 }
 
 student::~student()
@@ -53,7 +54,7 @@ void student::on_pushButton_3_clicked()
 
 void student::on_pushButton_2_clicked()
 {
-    if (dialog_ch->exec() == QDialog::Accepted)
+    if (dialog_pay->exec() == QDialog::Accepted)
     {
         update();
     }

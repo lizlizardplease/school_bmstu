@@ -5,6 +5,7 @@
 #include <QtSql>
 #include "adds.h"
 #include "change.h"
+#include "pay.h"
 
 namespace Ui {
 class student;
@@ -32,6 +33,7 @@ private:
     QString login;
     QSqlQueryModel *m_model;
     change* dialog_ch;
+    pay* dialog_pay;
 };
 
 #endif // STUDENT_H
