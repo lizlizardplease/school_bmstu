@@ -46,8 +46,8 @@ void adds::on_pushButton_clicked()
     if (ui->pushButton->isEnabled())
     {
         query.exec();
-        qDebug() << login << "  " << chosen;
-        qDebug() << m_model->lastError();
+        query.prepare("UPDATE liza_and_egor.courses SET amount = amount + 1 WHERE title = '" + chosen + "';");
+        query.exec();
         accept();
     }
 }
