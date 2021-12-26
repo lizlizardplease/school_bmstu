@@ -17,6 +17,9 @@ student::student(QWidget *parent, QString l) :
     dialog->setWindowTitle("Каталог новых курсов");
     dialog_ch = new change(this, login);
     dialog_ch->setWindowTitle("Изменение данных");
+    dialog_pay = new pay(this, login);
+    dialog_pay->setWindowTitle("Баланс");
+
 }
 
 student::~student()
@@ -47,7 +50,7 @@ void student::update(){
 
 void student::on_pushButton_3_clicked()
 {
-    if (dialog_ch->exec() == QDialog::Accepted)
+    if (dialog_pay->exec() == QDialog::Accepted)
     {
         update();
     }

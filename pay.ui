@@ -112,7 +112,7 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>0</x>
@@ -121,7 +121,7 @@
      <height>321</height>
     </rect>
    </property>
-   <layout class="QVBoxLayout" name="verticalLayout" stretch="1,1,1">
+   <layout class="QVBoxLayout" name="verticalLayout" stretch="1,1,1,0">
     <property name="spacing">
      <number>10</number>
     </property>
@@ -136,10 +136,47 @@
     </property>
     <item>
      <widget class="QLabel" name="label">
+      <property name="palette">
+       <palette>
+        <active>
+         <colorrole role="WindowText">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>45</red>
+            <green>188</green>
+            <blue>183</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </active>
+        <inactive>
+         <colorrole role="WindowText">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>45</red>
+            <green>188</green>
+            <blue>183</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </inactive>
+        <disabled>
+         <colorrole role="WindowText">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>190</red>
+            <green>190</green>
+            <blue>190</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </disabled>
+       </palette>
+      </property>
       <property name="font">
        <font>
         <family>Sawasdee</family>
-        <pointsize>13</pointsize>
+        <pointsize>20</pointsize>
         <weight>75</weight>
         <bold>true</bold>
        </font>
@@ -150,10 +187,23 @@
      </widget>
     </item>
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout" stretch="3,2">
+     <layout class="QHBoxLayout" name="horizontalLayout" stretch="3,2,3">
       <property name="topMargin">
        <number>0</number>
       </property>
+      <item>
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
       <item>
        <widget class="QTextEdit" name="textEdit">
         <property name="palette">
@@ -259,6 +309,50 @@
       </property>
       <property name="text">
        <string/>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButton">
+      <property name="palette">
+       <palette>
+        <active>
+         <colorrole role="Button">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>227</red>
+            <green>89</green>
+            <blue>132</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </active>
+        <inactive>
+         <colorrole role="Button">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>227</red>
+            <green>89</green>
+            <blue>132</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </inactive>
+        <disabled>
+         <colorrole role="Button">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>227</red>
+            <green>89</green>
+            <blue>132</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </disabled>
+       </palette>
+      </property>
+      <property name="text">
+       <string>подтвердить</string>
       </property>
      </widget>
     </item>

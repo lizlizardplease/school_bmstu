@@ -5,6 +5,7 @@
 #include <QtSql>
 #include <QMessageBox>
 #include "change.h"
+#include "pay.h"
 
 namespace Ui {
 class tutor;
@@ -22,13 +23,18 @@ private slots:
     void on_change_clicked();
     void update();
 
-    void on_pushButton_money_clicked();
+//<<<<<<< HEAD
+//    void on_pushButton_money_clicked();
+//=======
+    void on_pay_clicked();
+//>>>>>>> ddb503610846b20bbbb66a4275fdc3fe807dffc3
 
 private:
     Ui::tutor *ui;
     QSqlQueryModel *m_model;
     QString login;
     change *dialog;
+    pay *dialog1;
 };
 
 #endif // TUTOR_H
