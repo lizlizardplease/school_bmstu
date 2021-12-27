@@ -277,7 +277,7 @@
      </layout>
     </item>
     <item>
-     <layout class="QVBoxLayout" name="verticalLayout_2" stretch="1,1,0,6,4">
+     <layout class="QVBoxLayout" name="verticalLayout_2" stretch="1,1,0,6,4,0">
       <property name="topMargin">
        <number>10</number>
       </property>
@@ -335,8 +335,14 @@
       </item>
       <item>
        <widget class="QPushButton" name="pay">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="text">
-         <string>вывести деньги</string>
+         <string>Вывести деньги</string>
         </property>
        </widget>
       </item>
@@ -621,6 +627,19 @@
          </widget>
         </item>
        </layout>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Выйти из приложения</string>
+        </property>
+       </widget>
       </item>
      </layout>
     </item>

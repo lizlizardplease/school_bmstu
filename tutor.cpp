@@ -76,3 +76,9 @@ void tutor::on_pay_clicked()
 }
 
 //>>>>>>> ddb503610846b20bbbb66a4275fdc3fe807dffc3
+
+void tutor::on_pushButton_clicked()
+{
+    QApplication::quit();
+}
+

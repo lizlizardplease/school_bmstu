@@ -29,6 +29,8 @@ private slots:
     void on_pay_clicked();
 //>>>>>>> ddb503610846b20bbbb66a4275fdc3fe807dffc3
 
+    void on_pushButton_clicked();
+
 private:
     Ui::tutor *ui;
     QSqlQueryModel *m_model;

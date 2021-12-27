@@ -1,6 +1,7 @@
 #include "pay.h"
 #include "ui_pay.h"
 #include <QtSql>
+#include <QMessageBox>
 
 pay::pay(QWidget *parent, QString username) :
     QDialog(parent),
@@ -13,7 +14,7 @@ pay::pay(QWidget *parent, QString username) :
     query.next();
     if (query.value(0).toString() == "student"){
         type = 0;
-        ui->label->setText("Введите сумму, которую хотите положить на счет");
+        ui->label->setText("Введите сумму ");
     }
     else{
         type = 1;
@@ -48,6 +49,7 @@ void pay::on_pushButton_clicked()
             query.prepare("UPDATE liza_and_egor.users SET bank = bank + '" + tmp + "' WHERE login='"+login+"'");
             query.exec();
         }
+    QMessageBox::information(this, tr("Баланс"), tr("Баланс успешно пополнен."));
     accept();
     QMessageBox::information(this, tr("Баланс"), tr("Баланс успешно пополнен."));
 }

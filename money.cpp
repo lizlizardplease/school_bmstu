@@ -11,8 +11,6 @@ money::money(QWidget *parent) :
     ui->tableView->setModel(m_model);
     ui->tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->tableView->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
-
-
 }
 
 money::~money()
@@ -20,17 +18,9 @@ money::~money()
     delete ui;
 }
 
-// платить часть налогов
+// платить часть налогов (пока что просто вывод курсов в определенный месяц)
 void money::on_pushButton_3_clicked()
 {
-    //QSqlQuery query;
-    //query.prepare("SELECT * FROM liza_and_egor.courses WHERE (begin>=date2 AND begin<date)");
-    //query.exec();
-    //while(query.next())
-    //{
-        //ui->comboBox->addItem(query.value(0).toString());
-    //}
-    //m_model->setQuery("SELECT * FROM liza_and_egor.courses");
     QString new_date2=date2.toString();
     QString new_date1=date1.toString();
     m_model->setQuery("SELECT * FROM liza_and_egor.courses WHERE (begin>='"+new_date2+"') AND (begin<'"+new_date1+"');");
@@ -46,7 +36,9 @@ void money::on_pushButton_clicked()
 void money::on_pushButton_2_clicked()
 {
    // comboBox
-    // m_model->setQuery("SELECT * FROM liza_and_egor.courses WHERE begin<;");
+   // m_model->setQuery("SELECT * FROM liza_and_egor.courses WHERE begin<;");
+
+
 }
 
 // показать формулу расчета прибыли
