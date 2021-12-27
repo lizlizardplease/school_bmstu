@@ -49,5 +49,6 @@ void pay::on_pushButton_clicked()
             query.exec();
         }
     accept();
+    QMessageBox::information(this, tr("Баланс"), tr("Баланс успешно пополнен."));
 }
 

@@ -2,6 +2,7 @@
 #define PAY_H
 
 #include <QDialog>
+#include <QMessageBox>
 
 namespace Ui {
 class pay;

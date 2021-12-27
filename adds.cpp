@@ -55,3 +55,9 @@ void adds::on_pushButton_clicked()
     }
 }
 
+
+void adds::on_pushButton_2_clicked()
+{
+
+}
+
