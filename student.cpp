@@ -32,6 +32,7 @@ void student::on_pushButton_clicked()
     if (dialog->exec() == QDialog::Accepted)
     {
         m_model->setQuery(" SELECT title, description, (surname || ' ' || name) AS ФИО_Преподавателя FROM liza_and_egor.users JOIN liza_and_egor.courses ON login = tutor JOIN liza_and_egor.courses_users ON title = course WHERE username = '"+ login + "';");
+        update();
     }
 }
 
@@ -50,10 +51,19 @@ void student::update(){
 
 void student::on_pushButton_3_clicked()
 {
-    if (dialog_pay->exec() == QDialog::Accepted)
+    if (dialog_ch->exec() == QDialog::Accepted)
     {
         update();
     }
 }
 
+
+
+void student::on_pushButton_2_clicked()
+{
+    if (dialog_pay->exec() == QDialog::Accepted)
+    {
+        update();
+    }
+}
 
